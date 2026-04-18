@@ -3,34 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch to Unlock</title>
+    <title>Anime gallary</title>
 </head>
 
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    iframe {
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 200px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px white;
+    }
+  </style>
+
+
 <body>
-<script>
-import React from "react";
+    <div>
+  <iframe
+    id="videoPlayer"
+    width="370"
+    height="658"
+    src=""
+    allowfullscreen>
+  </iframe>
+</div>
 
-export default function ImageLink() {
-  const handleClick = () => {
-    window.location.href = "https://example.com"; // change this link
-  };
+<!-- 🖼️ IMAGE GALLERY -->
+<div class="gallery">
+  <img src="onepiece.jpg" />
+  <img src="chainsawman.jpg" />
+</div>
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <img
-        src="/hunterxhunter.jpg"
-        alt="Hunter x Hunter"
-        onClick={handleClick}
-        style={{
-          width: "300px",
-          cursor: "pointer",
-          borderRadius: "10px"
-        }}
-      />
-    </div>
-  );
-}
-</script>
 
 </body>
 </html>
