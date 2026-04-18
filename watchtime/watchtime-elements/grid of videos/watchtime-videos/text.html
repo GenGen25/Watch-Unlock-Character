@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime Unlock</title>
+
+<link rel="stylesheet" href="elements.css">
+</head>
+
+<body>
+
+<h1>🎮 Unlock Your Character</h1>
+
+<div id="player-container">
+  <div id="videoFrame"></div>
+</div>
+
+<p id="status">⏳ Watch the full video to unlock</p>
+
+<button id="unlockBtn" class="button" disabled>
+  🔒 Locked
+</button>
+
+<br><br>
+
+<!-- Hidden finish button (appears after delay) -->
+<button id="finishBtn" class="button" style="display:none;">
+  ✅ I Finished Watching
+</button>
+
+<br><br>
+
+<a href="display-of-videos.html">
+  <button class="button">Back to Gallery</button>
+</a>
+
+<script src="app.js"></script>
+</body>
+</html>
