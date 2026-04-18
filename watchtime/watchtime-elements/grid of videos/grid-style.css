@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  background: #111;
+  font-family: sans-serif;
+}
+
+/* GRID LAYOUT */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.grid-item {
+  overflow: hidden;
+  border-radius: 15px;
+  background: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.grid-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+/* BUTTON RESET */
+.grid-item button {
+  border: none;
+  padding: 0;
+  background: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* IMAGE FIT */
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* IMAGE ZOOM ON HOVER */
+.grid-item:hover img {
+  transform: scale(1.1);
+}

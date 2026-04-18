@@ -68,50 +68,39 @@
 </a>
 
 <script>
-    let player;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '615',
-            width: '1000',
-            videoId: '7I3G21RyARs',
-            playerVars: {
-                'playsinline': 1
-            },
-            events: {
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    function onPlayerStateChange(event) {
-        if (event.data === YT.PlayerState.ENDED) {
-            unlockCharacter();
-        }
-    }
-
-    function unlockCharacter() {
-        document.getElementById("status").innerText = "✅ Character Unlocked!";
-        
-        let btn = document.getElementById("unlockBtn");
-        btn.disabled = false;
-        btn.innerText = "🎉 Play Character";
-
-        // Save progress
-        localStorage.setItem("videoCompleted", "true");
-    }
-
-    // Restore progress if already watched
-    window.onload = function() {
-        if (localStorage.getItem("videoCompleted") === "true") {
-            unlockCharacter();
-        }
-    };
-
-    // Load YouTube API
     let tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     document.body.appendChild(tag);
+
+    function onYouTubeIframeAPIReady(){
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'DV0gU6t7hNysV4df',
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+    }
+
+
+    function unlockCharacter() {
+        document.getElementById('unlockBtn').disabled = false;
+        document.getElementById('unlockBtn').textContent = '🔓 Unlocked';
+        document.getElementById('status').textContent = '✅ Character Unlocked!';
+    }
+    
+    function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+        unlockCharacter();
+    }
+}
+
+    unlockCharacter();
 </script>
 
 </body>
