@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/genesisvasquez/Desktop/help/Info/Watch-Unlock-Character/.claude/hooks/log-attribution.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
